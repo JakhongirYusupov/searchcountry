@@ -1,0 +1,399 @@
+/* =============== CONTENTS =============== */
+/* FONTS */
+/* BOX-SIZING */
+/* GLOBAL STYLES */
+/* HELPER / GLOBAL COMPONENTS */
+/* MEDIA QUERIES */
+
+
+
+/*------------------------------------*\
+  #FONT-FACE
+\*------------------------------------*/
+
+@font-face {
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/nunito-sans-v6-latin-300.woff2") format("woff2"),
+         url("../fonts/nunito-sans-v6-latin-300.woff") format("woff"); 
+  }
+@font-face {
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/nunito-sans-v6-latin-regular.woff2") format("woff2"), 
+         url("../fonts/nunito-sans-v6-latin-regular.woff") format("woff"); 
+  }
+@font-face {
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/nunito-sans-v6-latin-700.woff2") format("woff2"), 
+         url("../fonts/nunito-sans-v6-latin-700.woff") format("woff"); 
+  }
+@font-face {
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 900;
+    src: url("../fonts/nunito-sans-v6-latin-900.woff2") format("woff2"), 
+         url("../fonts/nunito-sans-v6-latin-900.woff") format("woff");
+  }
+
+/*------------------------------------*\
+  #BOX-SIZING
+\*------------------------------------*/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
+
+/*------------------------------------*\
+  #GLOBAL-STYLES
+\*------------------------------------*/
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #111517;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+/*------------------------------------*\
+#HELPER / GLOBAL COMPONENTS
+\*------------------------------------*/
+
+/* VISUALLY HIDING CODE */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+*:focus {
+    outline: none;
+    box-shadow: 0 0 5px 1px rgba(40, 182, 75, 0.5);
+}
+/* CONTAINER */
+
+.container {
+  max-width: 1320px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-header{
+ box-shadow: 0 6px 10px -2px #6D6D6D;
+}
+
+.dark .page-header{
+  background-color: #2B3844; 
+  color: white;
+}
+
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-top .header-logo {
+  text-decoration: none;
+  color: #111517;
+  margin: 0;
+}
+
+.dark .header-top .header-logo {
+  color: white;
+}
+
+.header-top h1 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 80px;
+}
+
+.dark-mode {
+    position: relative;
+    padding: 10px;
+    padding-left: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent ;
+    transition: background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.dark .dark-mode{
+  color: white;
+}
+
+.dark-mode:hover {
+    background-color: #2B3844;
+    color: white;
+}
+
+.dark .dark-mode:hover {
+    background-color: #f3f3f3;
+    color: #2B3844;
+}
+
+
+.dark-mode::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    background: url("../img/dark-mode.png") no-repeat center center;
+}
+
+.dark .dark-mode::before {
+  background: url("../img/dark-night.png") no-repeat center center;
+}
+
+.page-main {
+  background-color: #f2f2f2;
+}
+
+.dark .page-main{
+  background-color:#202C36;
+  color:white;
+}
+
+.page-main .container {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  background-color: #f2f2f2;
+}
+
+.dark .page-main .container{ 
+  background-color:#202C36;
+  color:white;
+}
+
+.filter-search{
+  display: flex;
+  font-family: "Nunito Sans", sans-serif;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 48px;;
+}
+
+.search-group {
+  position: relative;
+}
+
+.search-input {
+  max-width: 480px;
+  padding-left: 74px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  border-radius:  5px;
+  border: none;
+  box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0,7);
+}
+
+.search-group::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 19px;
+  left: 32px;
+  background: url("../img/search.svg") no-repeat center center;
+}
+
+.dark .search-input{
+  background-color: #2B3844;
+  color: white;
+}
+
+.dark .search-input::placeholder{
+  color: white;
+}
+
+.region {
+  width: 200px; 
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+  padding-right: 22px;
+  border: none;
+  border-radius: 5px;
+}
+
+.dark .region {
+  background-color: #2B3844;
+  color: white;
+}
+
+.region option {
+  display: inline-block;
+  padding: 5px;
+}
+
+.countries-list{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 74px 75px;
+  padding: 0;
+  margin: 0;
+}
+
+.countries-item{
+  max-width: 264px;
+  min-height: 336px;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  list-style: none;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1); 
+  box-shadow: 0 2px 5px 3px rgba(100, 100, 100, 0.5); 
+}
+
+.dark .countries-item{
+  box-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.5); 
+  background-color: #2B3844;
+  color: white;
+}
+
+
+.countries-item img{
+  max-width: 100%;
+  height: auto;
+  vertical-align: baseline;
+}
+
+
+.country-link{
+  display: block;
+  text-decoration: none;
+  color: #111517;
+  margin: 0;
+  padding: 0;
+}
+
+.dark .country-link{
+  color: white;
+}
+
+.countries-item:hover{
+  transform:translateY(-10px);
+}
+
+.info{
+  padding: 24px 24px 46px;
+}
+
+.country-heading{
+  font-size: 18px;
+  font-weight: 900;
+  margin: 0;
+  margin-bottom: 16px;
+  line-height: 26px;
+}
+
+.info-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+.info-text{
+  font-weight: 700;
+}
+
+.country-info:not(:last-child){
+  margin-bottom: 8px;
+}
+
+
+
+@media only screen and (max-width: 700px) {
+  .container {
+    max-width: 650px;
+  }
+
+  .search-input{
+    max-width: 300px;
+  }
+
+  .countries-list{
+    grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .header-top h1{
+    font-size: 14px;
+  }
+
+  .dark-mode{
+    font-size: 12px;
+  }
+
+  .container {
+    max-width: 90%;  
+  }
+  .page-main .container{
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .filter-search{
+    max-width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .search-input{
+    font-size: 12px;
+    margin-bottom: 40px;
+  }
+
+  .region{
+    font-size: 12px;
+  }
+
+  .countries-list{
+    grid-template-columns: auto;
+    row-gap: 40px;
+    justify-content: center;
+  }
+}
